@@ -19,7 +19,7 @@ The template used for this project already contains most of the general setup ne
 A new environment variable `GIT_REPOSITORY_URL` was added in the `example.env` for convenience.
 It allows easy changes to the GitHub URL without the need to edit any files.
 
-The variable is used in the `docusaurus.config.ts
+The variable is used in the `docusaurus.config.ts`
 ```ts title="docusaurus.config.ts"
 ...
 const gitRepositoryUrl = process.env.GIT_REPOSITORY_URL
