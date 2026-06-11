@@ -16,13 +16,12 @@ This repository hosts a developer blog built with Docusaurus. It includes tools 
   - [Repository Structure](#repository-structure)
   - [Deployment](#deployment)
     - [Deploy to Github Pages](#deploy-to-github-pages)
-    - [Contributing](#contributing)
 
 ## Quickstart
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or later recommended)
+- [Node.js](https://nodejs.org/) (v20 or later recommended)
 - [pnpm](https://pnpm.io/) (package manager for faster and more efficient dependency handling)
 
 1. Installation
