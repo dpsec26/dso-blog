@@ -96,7 +96,7 @@ For more information, see the full [Solution](./captcha-bypass/captcha-bypass.md
 
 **Challenge:** Post some feedback in another user’s name
 
-For more information, see the full [Solution](./forged-feedbback/forged-feedback.md).
+For more information, see the full [Solution](./forged-feedback/forged-feedback.md).
 
 ### User Credentials
 
