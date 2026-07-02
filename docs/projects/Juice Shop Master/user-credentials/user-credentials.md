@@ -2,6 +2,10 @@
 
 **Category:** [Injection](https://pwning.owasp-juice.shop/companion-guide/latest/part2/injection.html)
 
+:::note
+This documentation is for educational purposes only. See full [Disclaimer](../README.md#disclaimer)
+:::
+
 ## Description
 
 The challenge is to retrieve a list of all user credentials stored in the database via SQL injection.
