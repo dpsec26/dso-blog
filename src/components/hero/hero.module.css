@@ -1,0 +1,17 @@
+.heroSection {
+  background: #303846;
+  color: white;
+  padding: 6rem 0;
+}
+
+.heroSection h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
