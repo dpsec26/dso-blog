@@ -78,10 +78,10 @@ const config: Config = {
       title: '',
       hideOnScroll: true,
       items: [
-        { to: '#about', label: 'About me', position: 'left' },
-        { to: '#skills', label: 'My skills', position: 'left' },
-        { to: '#projects', label: 'My projects', position: 'left' },
-        { to: '#contact', label: 'Contact', position: 'left' },
+        { to: '/#about', label: 'About me', position: 'left' },
+        { to: '/#skills', label: 'My skills', position: 'left' },
+        { to: '/#projects', label: 'My projects', position: 'left' },
+        { to: '/#contact', label: 'Contact', position: 'left' },
       ],
     },
     colorMode: {
