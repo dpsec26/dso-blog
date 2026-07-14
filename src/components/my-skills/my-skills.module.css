@@ -1,35 +1,35 @@
 .skillsSection {
-  background: var(--dark);
-  padding: 80px 0;
+  background: var(--dark, #1b1b1d);
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
   
 .skillsSection h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.75rem);
 }
 
 .skillCard img {
-  width: 48px;
-  height: 48px;
+  width: clamp(2.25rem, 5vw, 3rem);
+  height: clamp(2.25rem, 5vw, 3rem);
   margin-bottom: 12px;
 }
 
 .skillCard p {
   margin: 0;
-  font-size: 14px;
+  font-size: clamp(0.8125rem, 1.6vw, 0.875rem);
   color: white;
 }
 
 .cardInner {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: clamp(10rem, 22vw, 11.25rem);
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
@@ -51,6 +51,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .cardFront {
@@ -65,11 +67,115 @@
 }
 
 .cardBack ul {
-  padding: 0;
+  padding: 0 1rem;
   margin: 0;
   list-style: disc;
 }
 
 .cardBack li {
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+}
+
+.mobileSkills {
+  display: none;
+}
+
+.mobileTrack {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+}
+
+.mobileTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.mobileSlide {
+  flex: 0 0 calc(100% - 1.5rem);
+  scroll-snap-align: start;
+  background: #303846;
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.mobileSkillRow {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 5.5rem) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.875rem 0;
+}
+
+.mobileSkillRow + .mobileSkillRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobileSkillMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.mobileSkillMeta img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+}
+
+.mobileSkillMeta p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.mobileSkillDetails {
+  margin: 0;
+  padding-left: 1rem;
+  color: #fff;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.mobileSkillDetails li + li {
+  margin-top: 0.2rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.paginationDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.paginationDotActive {
+  background: #fff;
+}
+
+@media screen and (max-width: 996px) {
+  .skillsGrid {
+    display: none;
+  }
+
+  .mobileSkills {
+    display: block;
+  }
 }

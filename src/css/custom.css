@@ -39,8 +39,25 @@ html {
 
 .navbar__items {
   display: flex;
-  justify-content: center;
   font-size: 18px !important;
+}
+
+@media screen and (min-width: 997px) {
+  .navbar__items:not(.navbar__items--right) {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .navbar__items:not(.navbar__items--right) {
+    justify-content: flex-start;
+  }
+
+  .navbar__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .navbar__items a:hover {
