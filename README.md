@@ -4,57 +4,89 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Repository Description
 
-This repository hosts a developer blog built with Docusaurus. It includes tools and scripts for creating, managing, and deploying static web content. The software supports rapid local development, customizable theming, and seamless deployment to platforms like GitHub Pages.
+This repository hosts a portfolio and project documentation built with Docusaurus. It includes tools and scripts for creating, managing, and deploying static web content. The software supports rapid local development, customizable theming, and seamless deployment to platforms like GitHub Pages.
 
 ## Table of Contents
 
-- [My Developer Blog](#my-developer-blog)
-  - [Repository Description](#repository-description)
-  - [Table of Contents](#table-of-contents)
-  - [Quickstart](#quickstart)
-    - [Prerequisites](#prerequisites)
-  - [Repository Structure](#repository-structure)
-  - [Deployment](#deployment)
-    - [Deploy to Github Pages](#deploy-to-github-pages)
+- [Prerequisites](#prerequisites)
+- [Quickstart](#quickstart)
+- [Usage](#usage)
+   - [Environment Variables](#environment-variables)
+   - [Development Server](#development-server)
+   - [Build](#build)
+- [Repository Structure](#repository-structure)
+- [Deployment](#deployment)
+   - [Deploy to GitHub Pages](#deploy-to-github-pages)
+  
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) 18+ (20 or later recommended)
 
 ## Quickstart
 
-### Prerequisites
+1. Clone the repository
 
-- [Node.js](https://nodejs.org/) (v20 or later recommended)
-- [pnpm](https://pnpm.io/) (package manager for faster and more efficient dependency handling)
+```sh
+git clone git@github.com:dpsec26/dso-blog.git
+cd dso-blog
+```
 
-1. Installation
+2. Set environment
 
-   ```
-   $ pnpm install
-   ```
+```sh
+cp example.env .env
+```
 
-2. Local Development
+3. Install dependencies
 
-   ```
-   $ pnpm start
-   ```
+```sh
+npm install
+```
 
-   This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+4. Start local server
 
-3. Build
+```sh
+npm start
+```
 
-   ```
-   $ pnpm build
-   ```
+You can access the page with `http://localhost:3000/dso-blog/` in your browser.
 
-   This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Usage
 
-4. Deployment
+### Environment Variables
 
-   In order to deploy onto Github Pages, ensure that your `docusaurus.config.ts` conforms with the [documentation guidelines](https://docusaurus.io/docs/deployment#deploying-to-github-pages). After that is ensured run the following command to deploy:
+| Variable | Example Value | Description |
+| --- | --- | --- |
+| DEPLOYMENT_URL | https://dpsec26.github.io | The URL you want to deploy on |
+| DEPLOYMENT_BRANCH | main | The branch used when deploying via deploy command |
+| BASE_URL | /dso-blog/ | The URL path prefix |
+| GITHUB_ORG | dpsec26 | Your GitHub accountname |
+| GITHUB_PROJECT | dso-blog | The name of the repository |
+| GIT_REPOSITORY_URL | https://github.com/dpsec26/dso-blog | The GitHub repository URL |
 
-   ```
-   $ USE_SSH=true pnpm deploy
-   ```
+> [!NOTE]
+> The deployment workflow uses the example.env. Make sure you change these values according to your needs in case of a real deployment via GitHub workflow.
 
-For detailed information about deploying this Docusaurus project, refer to the [Deployment](#deployment) section below.
+### Development Server
+
+You can start a local development server with
+
+```sh
+npm start
+```
+
+> [!NOTE]
+> This starts a **development server**. It's not optimized for production. Files are only built in memory.
+
+### Build
+
+Create a proper production build with
+
+```sh
+npm build
+```
+
+This gives you actual static files. It also makes sure some things are getting optimized (e.g. minified or bundled).
 
 ## Repository Structure
 
@@ -66,15 +98,20 @@ The repository is organized as follows:
 - `static/`: Stores static assets (e.g., images, icons) served directly without processing.
 - `sidebars.ts`: Configures the structure of sidebars in the documentation section.
 - `docusaurus.config.ts`: Main configuration file for customizing and managing Docusaurus behavior.
-- `build/`: Generated after running the `pnpm build` command. Contains the static website files ready for deployment.
+- `build/`: Generated after running the `npm build` command. Contains the static website files ready for deployment.
 
 New content can be added as follows:
 
 - Add new documentation files to the `docs/` folder.
-- Add new blog posts to the `blog/` folder. No additional configuration is required.
+- Add new blog posts to the `blog/` folder.
+
+For further information, check out the [Docusaurus Documentation](https://docusaurus.io/docs)
+
+> [!NOTE]
+> Right now the blog is disabled. You need to set the environment variable `BLOG_ENABLED=true` to enable it.
 
 ## Deployment
 
-### Deploy to Github Pages
+### Deploy to GitHub Pages
 
-The repository contains a GitHub workflow that automatically deploys changes to GitHub Pages. It is triggered when changes are commited to the main branch.
+The repository contains a GitHub [workflow](./.github/workflows/deploy.yaml) that automatically deploys changes to GitHub Pages. It is triggered when changes are committed to the main branch.

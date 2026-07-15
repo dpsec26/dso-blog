@@ -28,3 +28,65 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: #303846 !important;
+}
+
+.navbar__items {
+  display: flex;
+  font-size: 18px !important;
+}
+
+.navbar__link {
+  color: #cbd5e1 !important;
+}
+
+.navbar__link:hover {
+  color: #fff !important;
+}
+
+@media screen and (min-width: 997px) {
+  .navbar__items:not(.navbar__items--right) {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .navbar__items:not(.navbar__items--right) {
+    justify-content: flex-start;
+  }
+
+  .navbar__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.navbar__items a:hover {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.portfolioButton {
+  background-color: #6b6b6b !important;
+  color: #fff !important;
+  border: 1px solid #6b6b6b !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  cursor: pointer !important;
+}
+
+.portfolioButton:hover {
+  background-color: #8d8d8d !important;
+  color: #fff !important;
+  border: 1px solid #8d8d8d !important;
+  text-decoration: none !important;
+}

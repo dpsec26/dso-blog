@@ -10,9 +10,9 @@ const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
 const gitRepositoryUrl = process.env.GIT_REPOSITORY_URL;
 
 const config: Config = {
-  title: 'Diary of Daniel',
-  tagline: 'My journey into the fascinating world of DevSecOps',
-  favicon: 'img/favicon.ico',
+  title: 'Daniel Pagel',
+  //tagline: 'My journey into the fascinating world of DevSecOps',
+  //favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: process.env.DEPLOYMENT_URL ?? "https://dpsec26.github.io",
@@ -74,66 +74,30 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'DSO Blog',
-      logo: {
-        alt: 'Cool Dinosaur Logo',
-        src: 'img/logo.svg',
-      },
+      title: '',
+      hideOnScroll: true,
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
-          href: 'https://github.com/dpsec26/dso-blog',
-          label: 'Github',
-          position: 'right',
-        },
+        { to: '/#about', label: 'About me', position: 'left' },
+        { to: '/#skills', label: 'My skills', position: 'left' },
+        { to: '/#projects', label: 'My projects', position: 'left' },
+        { to: '/#contact', label: 'Contact', position: 'left' },
       ],
+    },
+    colorMode: {
+      disableSwitch: true,
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/guides/intro',
-            },
-            {
-              label: 'Projects',
-              to: '/docs/projects/overview',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/dpsec26/dso-blog',
-            },
-            {
-              label: 'Template',
-              href: 'https://github.com/Developer-Akademie-DevSecOpsKurs/dev-blog-template',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Daniel Pagel (dpsec26). Built with Docusaurus and 💚, extended from the developer-akademie-starter template.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Daniel Pagel`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['powershell', 'hcl'],
       magicComments: [
-        // Remember to extend the default highlight class name as well!
         {
           className: 'theme-code-block-highlighted-line',
           line: 'highlight-next-line',
@@ -147,16 +111,5 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 };
-
-
-if (blogEnabled) {
-  (config.themeConfig.navbar as any).items.push({to: '/blog', label: 'Blog', position: 'left'});
-  (
-    config.themeConfig.footer as any
-  ).links[2].items.push({
-    to: '/blog',
-    label: 'Blog',
-  });
-}
 
 export default config;

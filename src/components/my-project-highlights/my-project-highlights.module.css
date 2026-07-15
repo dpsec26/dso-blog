@@ -1,0 +1,201 @@
+.projectsSection {
+  background: #303846;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+.projectsSection :global(.container) {
+  display: grid;
+  grid-template-columns: minmax(12rem, 33.33%) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+.projectsSection h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  grid-column: 1 / -1;
+}
+
+.desktopLayout {
+  display: contents;
+}
+
+.mobileLayout {
+  display: none;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 8px 0;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: 0.2s;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+}
+
+.sidebar li:hover {
+  color: #ffffff;
+}
+
+.active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.viewAllProjects {
+  margin-top: 22px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.projectCard {
+  background: #1b1b1d;
+  border-radius: 20px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  color: #fff;
+  width: 100%;
+  max-width: 850px;
+}
+
+.projectTitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.projectContent {
+  display: grid;
+  grid-template-columns: minmax(10rem, 15rem) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: flex-start;
+}
+
+.projectLeft {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.miniSkills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.miniSkillCard {
+  background: #303846;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  display: inline-block;
+  border: 1px solid #303846;
+}
+
+.miniSkillCard img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  float: left;
+}
+
+.projectRight {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.projectRight p {
+  font-size: clamp(0.8125rem, 1.8vw, 0.9rem);
+  color: #d6dbe3;
+  margin: 0 0 clamp(1.5rem, 4vw, 2.375rem) 0;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  justify-content: flex-end;
+}
+
+.mobileProjectCard {
+  background: #1b1b1d;
+  border-radius: 20px;
+  padding: 1.25rem;
+  color: #fff;
+}
+
+.mobileProjectTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.mobileMiniSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.projectImage {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.mobileDescription {
+  font-size: 0.875rem;
+  color: #d6dbe3;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+.mobileButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.viewAllProjectsMobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .projectsSection :global(.container) {
+    display: block;
+  }
+
+  .desktopLayout {
+    display: none;
+  }
+
+  .mobileLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
