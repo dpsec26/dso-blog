@@ -98,7 +98,7 @@ The repository is organized as follows:
 - `static/`: Stores static assets (e.g., images, icons) served directly without processing.
 - `sidebars.ts`: Configures the structure of sidebars in the documentation section.
 - `docusaurus.config.ts`: Main configuration file for customizing and managing Docusaurus behavior.
-- `build/`: Generated after running the `pnpm build` command. Contains the static website files ready for deployment.
+- `build/`: Generated after running the `npm build` command. Contains the static website files ready for deployment.
 
 New content can be added as follows:
 
@@ -108,7 +108,7 @@ New content can be added as follows:
 For further information, check out the [Docusaurus Documentation](https://docusaurus.io/docs)
 
 > [!NOTE]
-> Right now the blog is disabled. You need to set the environment variable `BLOG_ENABLED=true` to activate it.
+> Right now the blog is disabled. You need to set the environment variable `BLOG_ENABLED=true` to enable it.
 
 ## Deployment
 
