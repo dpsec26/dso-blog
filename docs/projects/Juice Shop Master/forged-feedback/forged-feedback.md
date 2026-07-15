@@ -2,6 +2,10 @@
 
 **Category:** [Broken Access Control](https://pwning.owasp-juice.shop/companion-guide/latest/part2/broken-access-control.html)
 
+:::note
+This documentation is for educational purposes only. See full [Disclaimer](../README.md#disclaimer)
+:::
+
 ## Description
 
 The challenge is to post feedback in another user's name. This can be done without being logged in as any user.

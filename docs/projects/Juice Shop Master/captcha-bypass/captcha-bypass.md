@@ -2,6 +2,10 @@
 
 **Category:** [Broken Anti-Automation](https://pwning.owasp-juice.shop/companion-guide/latest/part2/broken-anti-automation.html)
 
+:::note
+This documentation is for educational purposes only. See full [Disclaimer](../README.md#disclaimer)
+:::
+
 ## Description
 
 The challenge is to submit 10 (or more) customer feedbacks within 20 seconds. There is more than one way to solve the challenge.
