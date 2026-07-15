@@ -65,7 +65,7 @@ You can access the page with `http://localhost:3000/dso-blog/` in your browser.
 | GIT_REPOSITORY_URL | https://github.com/dpsec26/dso-blog | The GitHub repository URL |
 
 > [!NOTE]
-> Make sure you change these values fitting your needs in case of a real deployment.
+> The deployment workflow uses the example.env. Make sure you change these values according to your needs in case of a real deployment via GitHub workflow.
 
 ### Development Server
 
