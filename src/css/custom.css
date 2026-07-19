@@ -6,27 +6,41 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --portfolio-blue: #266ad9;
+  --portfolio-dark: #262d33;
+  --portfolio-card: #313e47;
+  --portfolio-project-card: #212d3d;
+  --portfolio-muted: #cbd5e1;
+  --portfolio-white: #ffffff;
+
+  --ifm-color-primary: #266ad9;
+  --ifm-color-primary-dark: #1f5bc0;
+  --ifm-color-primary-darker: #1d56b5;
+  --ifm-color-primary-darkest: #184795;
+  --ifm-color-primary-light: #3c79dd;
+  --ifm-color-primary-lighter: #4781df;
+  --ifm-color-primary-lightest: #6796e5;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-background-color: var(--portfolio-blue);
+  --ifm-footer-background-color: var(--portfolio-dark);
+  --ifm-background-color: var(--portfolio-dark);
+  --ifm-font-color-base: var(--portfolio-white);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #266ad9;
+  --ifm-color-primary-dark: #1f5bc0;
+  --ifm-color-primary-darker: #1d56b5;
+  --ifm-color-primary-darkest: #184795;
+  --ifm-color-primary-light: #3c79dd;
+  --ifm-color-primary-lighter: #4781df;
+  --ifm-color-primary-lightest: #6796e5;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-background-color: var(--portfolio-blue);
+  --ifm-footer-background-color: var(--portfolio-dark);
+  --ifm-background-color: var(--portfolio-dark);
 }
 
 html {
@@ -34,59 +48,244 @@ html {
 }
 
 .navbar {
-  background-color: #303846 !important;
+  background-color: var(--portfolio-blue) !important;
+  box-shadow: none;
+  padding-inline: 0;
+}
+
+.navbar__inner {
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 0 var(--ifm-spacing-horizontal);
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* Empty brand title was flex-growing and pushing links to the right */
+.navbar__brand {
+  display: none;
 }
 
 .navbar__items {
   display: flex;
+  flex: 0 1 auto !important;
+  justify-content: flex-start !important;
   font-size: 18px !important;
+  margin-left: 0 !important;
+  gap: 0.25rem;
+}
+
+.navbar__items--right {
+  margin-left: auto;
+}
+
+.navbar__item {
+  padding-left: 0;
+  padding-right: 1.5rem;
 }
 
 .navbar__link {
-  color: #cbd5e1 !important;
+  color: var(--portfolio-white) !important;
 }
 
 .navbar__link:hover {
-  color: #fff !important;
+  color: var(--portfolio-white) !important;
+  opacity: 0.85;
 }
 
-@media screen and (min-width: 997px) {
-  .navbar__items:not(.navbar__items--right) {
-    justify-content: center;
+@media (min-width: 1440px) {
+  .navbar__inner {
+    max-width: var(--ifm-container-width-xl);
   }
 }
 
 @media screen and (max-width: 996px) {
+  .navbar__inner {
+    justify-content: flex-end;
+  }
+
   .navbar__items:not(.navbar__items--right) {
-    justify-content: flex-start;
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+    width: 100%;
+  }
+
+  .navbar__brand {
+    display: none;
   }
 
   .navbar__toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: var(--portfolio-white);
+    margin: 0;
+    order: 10;
+  }
+
+  .navbar__items--right {
+    display: none;
+  }
+
+  /* Full-screen white mobile menu overlay */
+  .navbar-sidebar {
+    width: 100% !important;
+    max-width: 100%;
+    background: var(--portfolio-white) !important;
+    box-shadow: none;
+  }
+
+  .navbar-sidebar__backdrop {
+    background: var(--portfolio-white);
+  }
+
+  .navbar-sidebar__brand {
+    background: var(--portfolio-white) !important;
+    box-shadow: none;
+    justify-content: flex-end;
+    padding: var(--ifm-navbar-padding-vertical) var(--ifm-spacing-horizontal);
+  }
+
+  .navbar-sidebar__brand .navbar__brand,
+  .navbar-sidebar__brand .margin-right--md,
+  .navbar-sidebar__brand > :not(.navbar-sidebar__close) {
+    display: none !important;
+  }
+
+  .navbar-sidebar__close {
+    display: inline-flex !important;
+    margin-left: auto;
+    padding: 0.5rem;
+    color: var(--portfolio-blue) !important;
+  }
+
+  .navbar-sidebar__close svg {
+    color: var(--portfolio-blue) !important;
+  }
+
+  .navbar-sidebar__close svg g,
+  .navbar-sidebar__close svg path {
+    stroke: var(--portfolio-blue) !important;
+    fill: var(--portfolio-blue) !important;
+  }
+
+  .navbar-sidebar__items {
+    height: calc(100vh - var(--ifm-navbar-height));
+  }
+
+  .navbar-sidebar__item.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar-sidebar .menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-sidebar .menu__list-item {
+    margin: 0 !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-sidebar .menu__link {
+    color: var(--portfolio-blue) !important;
+    background: transparent !important;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-sidebar .menu__link:hover {
+    color: var(--portfolio-blue) !important;
+    background: transparent !important;
+    opacity: 0.8;
   }
 }
 
 .navbar__items a:hover {
-  color: #fff !important;
+  color: var(--portfolio-white) !important;
   text-decoration: none !important;
 }
 
+.footer {
+  background-color: var(--portfolio-dark) !important;
+}
+
 .portfolioButton {
-  background-color: #6b6b6b !important;
-  color: #fff !important;
-  border: 1px solid #6b6b6b !important;
-  border-radius: 20px !important;
-  padding: 10px 20px !important;
+  background-color: var(--portfolio-blue) !important;
+  color: var(--portfolio-white) !important;
+  border: 1px solid var(--portfolio-blue) !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
   font-size: 16px !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
   cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
 }
 
 .portfolioButton:hover {
-  background-color: #8d8d8d !important;
-  color: #fff !important;
-  border: 1px solid #8d8d8d !important;
+  background-color: #5696ff !important;
+  color: var(--portfolio-white) !important;
+  border-color: #5696ff !important;
+  text-decoration: none !important;
+}
+
+.portfolioButtonLight {
+  background-color: var(--portfolio-white) !important;
+  color: var(--portfolio-blue) !important;
+  border: 1px solid var(--portfolio-white) !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
+
+.portfolioButtonLight:hover {
+  background-color: #dfe0e1 !important;
+  border-color: #dfe0e1 !important;
+  color: var(--portfolio-blue) !important;
+  text-decoration: none !important;
+}
+
+.portfolioButtonOutline {
+  background-color: transparent !important;
+  color: var(--portfolio-white) !important;
+  border: 1px solid var(--portfolio-white) !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.portfolioButtonOutline:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--portfolio-white) !important;
   text-decoration: none !important;
 }

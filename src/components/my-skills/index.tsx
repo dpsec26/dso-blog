@@ -5,53 +5,41 @@ import styles from './my-skills.module.css';
 const SKILLS_PER_SLIDE = 3;
 
 const skills = [
-  { name: 'CSS', 
-    icon: '/img/portfolio/css.png',
-    details: ['Responsive layouts (Flexbox, Grid)', 'Animations and transitions', 'Modern UI styling and theming', 'Cross-browser compatibility']
-  },
-  { name: 'Docker', 
-    icon: '/img/portfolio/docker.png', 
-    details: ['Containerization of applications', 'Docker Compose for multi-service setups', 'Image creation and optimization', 'Development and deployment workflows'] 
-  },
-  { name: 'Docusaurus', 
-    icon: '/img/portfolio/docusaurus.png', 
-    details: ['Static site generation', 'Documentation structure and versioning', 'Custom theming and components', 'Blog and content management'] 
-  },
-  { name: 'CI/CD with GitHub Actions', 
-    icon: '/img/portfolio/githubactions.png', 
-    details: ['Automated build and test pipelines', 'Deployment workflows', 'YAML-based pipeline configuration', 'Integration with repositories and environments'] 
-  },
-  { name: 'Go', 
-    icon: '/img/portfolio/go.png', 
-    details: ['Backend service development', 'REST API design', 'Concurrency with goroutines', 'CLI tool development'] 
-  },
   { name: 'HTML', 
-    icon: '/img/portfolio/html5.png', 
+    icon: '/img/portfolio/skills/html.svg', 
     details: ['Semantic markup', 'Accessible web structure', 'Forms and validation', 'SEO-friendly layouts'] 
   },
-  { name: 'MySQL', 
-    icon: '/img/portfolio/mysql.png', 
-    details: ['Database design and normalization', 'Query optimization', 'Indexing and performance tuning', 'Data modeling'] 
+  { name: 'CSS', 
+    icon: '/img/portfolio/skills/css.svg',
+    details: ['Responsive layouts (Flexbox, Grid)', 'Animations and transitions', 'Modern UI styling and theming', 'Cross-browser compatibility']
   },
-  { name: 'PostgreSQL', 
-    icon: '/img/portfolio/postgresql.png', 
-    details: ['Advanced SQL queries', 'JSON and complex data types', 'Performance tuning and indexing', 'Data modeling'] 
+  { name: 'Static Site Generator', 
+    icon: '/img/portfolio/skills/docusaurus.svg', 
+    details: ['Static site generation', 'Documentation structure and versioning', 'Custom theming and components', 'Blog and content management'] 
   },
   { name: 'Python', 
-    icon: '/img/portfolio/python.png', 
+    icon: '/img/portfolio/skills/python.svg', 
     details: ['Scripting and automation', 'Backend development', 'Data processing', 'Data analysis'] 
   },
-  { name: 'IT-Security', 
-    icon: '/img/portfolio/security.png', 
-    details: ['Secure coding practices', 'Authentication and authorization', 'Basic network security concepts', 'Vulnerability awareness'] 
-  },
   { name: 'Shell Scripting', 
-    icon: '/img/portfolio/shellscripting.png', 
+    icon: '/img/portfolio/skills/shellscripting.svg', 
     details: ['Automation of system tasks', 'Bash scripting', 'File and process management', 'DevOps support scripts'] 
   },
   { name: 'YAML', 
-    icon: '/img/portfolio/yaml.png', 
+    icon: '/img/portfolio/skills/yaml.svg', 
     details: ['Configuration management', 'CI/CD pipeline definitions', 'Infrastructure configuration', 'Workflow automation'] 
+  },
+  { name: 'Docker', 
+    icon: '/img/portfolio/skills/docker.svg', 
+    details: ['Containerization of applications', 'Docker Compose for multi-service setups', 'Image creation and optimization', 'Development and deployment workflows'] 
+  },
+  { name: 'CI/CD with GitHub Actions', 
+    icon: '/img/portfolio/skills/githubactions.svg', 
+    details: ['Automated build and test pipelines', 'Deployment workflows', 'YAML-based pipeline configuration', 'Integration with repositories and environments'] 
+  },
+  { name: 'IT-Security', 
+    icon: '/img/portfolio/skills/security.svg', 
+    details: ['Secure coding practices', 'Authentication and authorization', 'Basic network security concepts', 'Vulnerability awareness'] 
   },
 ];
 
@@ -128,6 +116,7 @@ export default function Skills() {
                 </div>
 
                 <div className={styles.cardBack}>
+                  <p className={styles.cardBackHeading}>How I used this skill</p>
                   <ul>
                     {skill.details.map((detail) => (
                       <li key={detail}>{detail}</li>
