@@ -91,7 +91,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Daniel Pagel`,
+      copyright: `© Daniel Pagel ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

@@ -1,71 +1,109 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import styles from './my-project-highlights.module.css';
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 
 type Project = {
   id: string;
+  listTitle: string;
   title: string;
   description: string;
   skills: { name: string; icon: string }[];
   links: { docs: string; github: string };
-  image?: string;
+  image: string;
 };
 
 const projects: Project[] = [
   {
-    id: "baby-tools",
-    title: "Baby Tools World",
+    id: 'baby-tools',
+    listTitle: 'Baby Tools',
+    title: 'Project Baby Tools',
     description:
-      "E-Commerce website for baby products with a focus on security and scalability. Developed using HTML, Python, and Docker.",
+      'E-Commerce website for baby products with a focus on security and scalability. Developed using HTML, Python, and Docker.',
     skills: [
-      { name: "HTML", icon: "/img/portfolio/html5.png" },
-      { name: "Python", icon: "/img/portfolio/python.png" },
-      { name: "PostgreSQL", icon: "/img/portfolio/postgresql.png" },
+      { name: 'HTML', icon: '/img/portfolio/cards/html.svg' },
+      { name: 'Python', icon: '/img/portfolio/cards/python.svg' },
+      { name: 'Docker', icon: '/img/portfolio/cards/docker.svg' },
     ],
-    links: { docs: "/docs/projects/baby-tools-world", github: "https://github.com/dpsec26/baby-tools-world" },
+    image: '/img/portfolio/projects/babytools.svg',
+    links: {
+      docs: '/docs/projects/baby-tools-world',
+      github: 'https://github.com/dpsec26/baby-tools-world',
+    },
   },
   {
-    id: "minecraft",
-    title: "Minecraft Server",
+    id: 'trucksigns',
+    listTitle: 'Truck Signs API',
+    title: 'Project Truck Signs API',
     description:
-      "Custom server setup with automation, containerization, and infrastructure scripting. Developed using Docker and YAML for configuration management.",
+      'REST API for logistics signage management with authentication and structured data handling.',
     skills: [
-      { name: "YAML", icon: "/img/portfolio/yaml.png" },
-      { name: "Shell scripting", icon: "/img/portfolio/shellscripting.png" },
-      { name: "Docker", icon: "/img/portfolio/docker.png" },
+      { name: 'Python', icon: '/img/portfolio/cards/python.svg' },
+      { name: 'Docker', icon: '/img/portfolio/cards/docker.svg' },
+      { name: 'YAML', icon: '/img/portfolio/cards/yaml.svg' },
     ],
-    links: { docs: "/docs/projects/minecraft-server", github: "https://github.com/dpsec26/mc-server" },
+    image: '/img/portfolio/projects/trucksigns.svg',
+    links: {
+      docs: '/docs/projects/truck-signs-api',
+      github: 'https://github.com/dpsec26/truck_signs_api',
+    },
   },
   {
-    id: "trucksigns",
-    title: "Truck Signs API",
+    id: 'juice-shop',
+    listTitle: 'Juice Shop Meister',
+    title: 'Project Juice Shop Meister',
     description:
-      "REST API for logistics signage management with authentication and structured data handling.",
+      'Security-focused project using OWASP Juice Shop. Explored vulnerabilities and mitigation strategies.',
     skills: [
-      { name: "Python", icon: "/img/portfolio/python.png" },
-      { name: "PostgreSQL", icon: "/img/portfolio/postgresql.png" },
-      { name: "Docker", icon: "/img/portfolio/docker.png" },
+      { name: 'HTML', icon: '/img/portfolio/cards/html.svg' },
+      { name: 'Python', icon: '/img/portfolio/cards/python.svg' },
+      { name: 'IT-Security', icon: '/img/portfolio/cards/security.svg' },
     ],
-    links: { docs: "/docs/projects/truck-signs-api", github: "https://github.com/dpsec26/truck_signs_api" },
+    image: '/img/portfolio/projects/juiceshop.svg',
+    links: {
+      docs: '/docs/projects/Juice%20Shop%20Master',
+      github: '',
+    },
   },
   {
-    id: "juice-shop",
-    title: "Juice Shop Master",
+    id: 'minecraft',
+    listTitle: 'Minecraft',
+    title: 'Project Minecraft',
     description:
-      "Security-focused project using OWASP Juice Shop. Explored vulnerabilities and mitigation strategies.",
+      'Custom server setup with automation, containerization, and infrastructure scripting. Developed using Docker and YAML for configuration management.',
     skills: [
-      { name: "HTML", icon: "/img/portfolio/html5.png" },
-      { name: "Python", icon: "/img/portfolio/python.png" },
-      { name: "IT-Security", icon: "/img/portfolio/security.png" },
+      { name: 'YAML', icon: '/img/portfolio/cards/yaml.svg' },
+      { name: 'Shell scripting', icon: '/img/portfolio/cards/shell-scripting.svg' },
+      { name: 'Docker', icon: '/img/portfolio/cards/docker.svg' },
     ],
-    links: { docs: "/docs/projects/Juice%20Shop%20Master", github: "" },
+    image: '/img/portfolio/projects/minecraft.svg',
+    links: {
+      docs: '/docs/projects/minecraft-server',
+      github: 'https://github.com/dpsec26/mc-server',
+    },
+  },
+  {
+    id: 'wordpress',
+    listTitle: 'WordPress hosten',
+    title: 'Project WordPress',
+    description:
+      'Containerized WordPress and MariaDB setup with environment-based configuration for a self-hosted blog.',
+    skills: [
+      { name: 'Docker', icon: '/img/portfolio/cards/docker.svg' },
+      { name: 'YAML', icon: '/img/portfolio/cards/yaml.svg' },
+      { name: 'Shell scripting', icon: '/img/portfolio/cards/shell-scripting.svg' },
+    ],
+    image: '/img/portfolio/projects/wordpress.svg',
+    links: {
+      docs: '/docs/projects/wordpress',
+      github: 'https://github.com/dpsec26/wordpress',
+    },
   },
 ];
 
-function SkillIcon({ icon, name }: { icon: string; name: string }) {
+function SkillBadge({ icon, name }: { icon: string; name: string }) {
   const src = useBaseUrl(icon);
-  return <img src={src} alt={name} />;
+  return <img className={styles.skillBadge} src={src} alt={name} />;
 }
 
 function ProjectImage({ image, title }: { image: string; title: string }) {
@@ -73,23 +111,33 @@ function ProjectImage({ image, title }: { image: string; title: string }) {
   return <img className={styles.projectImage} src={src} alt={title} />;
 }
 
+function SeeMoreLink() {
+  const arrowSrc = useBaseUrl('/img/portfolio/icons/arrow-right.svg');
+
+  return (
+    <Link to="/docs/projects/overview" className={styles.seeMore}>
+      <img src={arrowSrc} alt="" aria-hidden="true" />
+      see more projects
+    </Link>
+  );
+}
+
 function DesktopProjectCard({ project }: { project: Project }) {
   return (
     <div className={styles.projectCard}>
-      <h3 className={styles.projectTitle}>{project.title}</h3>
-      <div className={styles.projectContent}>
-        <div className={styles.projectLeft}>
-          <div className={styles.miniSkills}>
-            {project.skills.map((skill) => (
-              <div key={skill.name} className={styles.miniSkillCard}>
-                <SkillIcon icon={skill.icon} name={skill.name} />
-                {skill.name}
-              </div>
-            ))}
-          </div>
+      <div className={styles.projectHeader}>
+        <h3 className={styles.projectTitle}>{project.title}</h3>
+        <div className={styles.miniSkills}>
+          {project.skills.map((skill) => (
+            <SkillBadge key={skill.name} icon={skill.icon} name={skill.name} />
+          ))}
         </div>
+      </div>
 
-        <div className={styles.projectRight}>
+      <div className={styles.projectBody}>
+        <ProjectImage image={project.image} title={project.title} />
+
+        <div className={styles.projectDetails}>
           <p>{project.description}</p>
 
           <div className={styles.buttons}>
@@ -99,7 +147,7 @@ function DesktopProjectCard({ project }: { project: Project }) {
               </Link>
             )}
             {project.links?.github && (
-              <Link to={project.links.github} className="portfolioButton">
+              <Link to={project.links.github} className="portfolioButtonOutline">
                 GitHub
               </Link>
             )}
@@ -114,21 +162,16 @@ function MobileProjectCard({ project, index }: { project: Project; index: number
   return (
     <article className={styles.mobileProjectCard}>
       <h3 className={styles.mobileProjectTitle}>
-        {index + 1}.{project.title}
+        {index + 1}. {project.listTitle}
       </h3>
 
       <div className={styles.mobileMiniSkills}>
         {project.skills.map((skill) => (
-          <div key={skill.name} className={styles.miniSkillCard}>
-            <SkillIcon icon={skill.icon} name={skill.name} />
-            {skill.name}
-          </div>
+          <SkillBadge key={skill.name} icon={skill.icon} name={skill.name} />
         ))}
       </div>
 
-      {project.image && (
-        <ProjectImage image={project.image} title={project.title} />
-      )}
+      <ProjectImage image={project.image} title={project.title} />
 
       <p className={styles.mobileDescription}>{project.description}</p>
 
@@ -139,7 +182,7 @@ function MobileProjectCard({ project, index }: { project: Project; index: number
           </Link>
         )}
         {project.links?.github && (
-          <Link to={project.links.github} className="portfolioButton">
+          <Link to={project.links.github} className="portfolioButtonOutline">
             GitHub
           </Link>
         )}
@@ -163,19 +206,15 @@ export default function ProjectsPage() {
               {projects.map((project, index) => (
                 <li
                   key={project.id}
-                  className={index === activeIndex ? styles.active : ""}
+                  className={index === activeIndex ? styles.active : undefined}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {index + 1}. {project.title}
+                  {index + 1}. {project.listTitle}
                 </li>
               ))}
             </ul>
 
-            <div className={styles.viewAllProjects}>
-              <Link to="/docs/projects/overview" className="portfolioButton">
-                View all projects
-              </Link>
-            </div>
+            <SeeMoreLink />
           </div>
 
           <div className={styles.content}>
@@ -189,9 +228,7 @@ export default function ProjectsPage() {
           ))}
 
           <div className={styles.viewAllProjectsMobile}>
-            <Link to="/docs/projects/overview" className="portfolioButton">
-              View all projects
-            </Link>
+            <SeeMoreLink />
           </div>
         </div>
       </div>
