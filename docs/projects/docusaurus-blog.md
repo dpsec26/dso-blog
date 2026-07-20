@@ -1,3 +1,8 @@
+---
+title: Docusaurus Blog
+sidebar_position: 7
+---
+
 # Docusaurus Blog
 
 This blog is based on a [template](https://github.com/Developer-Akademie-DevSecOpsKurs/dev-blog-template) provided by the Developer Akademie.

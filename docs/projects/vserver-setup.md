@@ -1,3 +1,8 @@
+---
+title: V-Server Setup
+sidebar_position: 8
+---
+
 # V-Server Setup
 
 This is the documentation for the `V-Server-Setup` project. A virtual Ubuntu machine with root access was provided.

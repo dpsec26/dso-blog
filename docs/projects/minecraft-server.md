@@ -1,6 +1,7 @@
 ---
 title: Minecraft Server
 sidebar_label: Minecraft Server
+sidebar_position: 4
 ---
 
 # Minecraft Server 26.1 Java Edition

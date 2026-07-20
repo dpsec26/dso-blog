@@ -1,5 +1,6 @@
 ---
 title: Truck Signs API
+sidebar_position: 3
 ---
 
 <div align="center">
