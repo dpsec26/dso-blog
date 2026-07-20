@@ -1,6 +1,9 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './hero.module.css';
 
 export default function Hero() {
+  const portraitSrc = useBaseUrl('/img/portfolio/icons/portrait.png');
+
   return (
     <section id="about" className={styles.heroSection}>
       <div className={`container ${styles.heroContent}`}>
@@ -8,6 +11,10 @@ export default function Hero() {
           <p className={styles.intro}>Hey there. 👋 I am</p>
           <h1>Daniel Pagel</h1>
           <h3>Software Developer</h3>
+        </div>
+
+        <div className={styles.heroPortrait}>
+          <img src={portraitSrc} alt="Daniel Pagel" />
         </div>
 
         <p className={styles.description}>
