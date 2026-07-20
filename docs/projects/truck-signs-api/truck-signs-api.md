@@ -1,3 +1,7 @@
+---
+title: Truck Signs API
+---
+
 <div align="center">
 
 ![Truck Signs](./img/Truck_Signs_logo.png)
