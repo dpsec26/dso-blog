@@ -148,7 +148,7 @@
 }
 
 .projectDetails p {
-  font-size: clamp(0.8125rem, 1.8vw, 0.95rem);
+  font-size: clamp(1rem, 1.8vw, 1rem);
   color: #ffffff;
   margin: 0;
   line-height: 1.6;

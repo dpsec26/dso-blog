@@ -1,3 +1,9 @@
+---
+title: Wordpress
+sidebar_position: 6
+---
+
+
 # WordPress
 
 This documentation contains the setup for a WordPress blog and a MariaDB. Each service runs in its own container.

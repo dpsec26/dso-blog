@@ -20,7 +20,7 @@
 
 .contactSection p {
   color: var(--portfolio-muted, #cbd5e1);
-  font-size: clamp(0.8125rem, 1.6vw, 0.875rem);
+  font-size: clamp(1rem, 1.6vw, 1rem);
   line-height: 1.6;
   margin: 0;
 }

@@ -1,3 +1,9 @@
+---
+title: Baby Tools World
+sidebar_position: 5
+---
+
+
 # Baby Tools World
 
 This documentation contains the containerization of the 'Baby Tools World' which is a simple full stack shop application written in Python using Django 6.
