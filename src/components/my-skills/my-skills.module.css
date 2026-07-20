@@ -15,6 +15,10 @@
   gap: clamp(1rem, 3vw, 1.75rem);
 }
 
+.skillCard {
+  perspective: 1000px;
+}
+
 .skillCard img {
   width: clamp(3.25rem, 6.5vw, 4.25rem);
   height: clamp(3.25rem, 6.5vw, 4.25rem);
@@ -46,6 +50,7 @@
   height: 100%;
   top: 0;
   left: 0;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 16px;
   display: flex;
@@ -58,13 +63,14 @@
 
 .cardFront {
   background: var(--portfolio-card, #313e47) !important;
+  transform: rotateY(0deg) translateZ(1px);
   z-index: 2;
 }
 
 .cardBack {
   background: #4f7399 !important;
   color: white;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(1px);
   align-items: flex-start;
   justify-content: center;
   padding: 1rem 1.15rem;
